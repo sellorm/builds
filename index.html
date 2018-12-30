@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>sellorm - builds</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Exo+2:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <style>
+  .sites-table {
+    width: auto;
+  }
+  </style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  // Build table of sites based on json file
+  function buildTable() {
+
+    $.getJSON('builds.json', function(builds) {
+
+
+      var html = "<thead><tr><td>Download</td><td>Description</td></tr></thead><tbody>";
+      for (var i = 0; i < builds.length; i += 1) {
+        // sites Div
+        html += "<tr><td><a href=\"" + builds[i].url + "\">";
+        html += builds[i].name + "</a></td><td>";
+        html += builds[i].desc + "</td></tr>";
+      }
+      html += "</tbody>";
+      document.getElementById('builds-table').innerHTML = html;
+    })
+  }
+
+  </script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+    <!-- title block -->
+    <div class="row">
+      <div class="column" style="margin-top: 5%">
+        <h4>sellorm - builds</h4>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- list block -->
+    <div class="row">
+      <div class="twelve columns" id="list"><h5>R for the Raspberry Pi - Experimental</h5></div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <p>Builds of R for the Raspberry Pi computer running the Rasbian OS</p>
+        <p>These builds are designed to be installed side-by-side to enable multiple versions of R to co-exist on the same system. The install to '/opt/R' and use the 'update-alternatives' facility to enable choosing a default from the installed versions.</p>
+        <p>Install using 'gdebi' (from gdebi-core) or 'dpkg -i' if you prefer to handle dependencies yourself.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <table id='builds-table' class="u-full-width"></table>
+      <script>
+        buildTable();
+      </script>
+    </div>
+
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
