@@ -1,4 +1,9 @@
-[
-    {"url": "http://dl.sellorm.com/rpi/R-3.5.2_8_armhf.deb", "name": "R-3.5.2", "desc": "R 3.5.2 \"Eggshell Igloo\""},
-    {"url": "http://dl.sellorm.com/rpi/R-3.4.4_7_armhf.deb", "name": "R-3.4.4", "desc": "R 3.4.4 \"Someone to Lean On\""}
-]
+{
+    "rasbian": [
+        {"url": "http://dl.sellorm.com/rpi/R-3.5.2_8_armhf.deb", "name": "R-3.5.2", "desc": "R 3.5.2 \"Eggshell Igloo\""},
+        {"url": "http://dl.sellorm.com/rpi/R-3.4.4_7_armhf.deb", "name": "R-3.4.4", "desc": "R 3.4.4 \"Someone to Lean On\""}
+    ],
+    "amzn2-aarch64": [
+        {"url": "http://dl.sellorm.com/amzn2-aarch64/R-3.5.2-1-9.amzn2.aarch64.rpm", "name": "R-3.5.2", "desc": "R 3.5.2 \"Eggshell Igloo\""}
+    ]
+}

@@ -35,20 +35,20 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
   // Build table of sites based on json file
-  function buildTable() {
+  function buildTable(project) {
 
     $.getJSON('builds.json', function(builds) {
 
-
       var html = "<thead><tr><td>Download</td><td>Description</td></tr></thead><tbody>";
-      for (var i = 0; i < builds.length; i += 1) {
+      for (var i = 0; i < builds[project].length; i += 1) {
         // sites Div
-        html += "<tr><td><a href=\"" + builds[i].url + "\">";
-        html += builds[i].name + "</a></td><td>";
-        html += builds[i].desc + "</td></tr>";
+        html += "<tr><td><a href=\"" + builds[project][i].url + "\">";
+        html += builds[project][i].name + "</a></td><td>";
+        html += builds[project][i].desc + "</td></tr>";
       }
       html += "</tbody>";
-      document.getElementById('builds-table').innerHTML = html;
+      var tableId = project + "-table"
+      document.getElementById(tableId).innerHTML = html;
     })
   }
 
@@ -70,25 +70,47 @@
 
     <hr>
 
-    <!-- list block -->
-    <div class="row">
-      <div class="twelve columns" id="list"><h5>R for the Raspberry Pi - Experimental</h5></div>
-    </div>
-    <div class="row">
-      <div class="twelve columns">
-        <p>Builds of R for the Raspberry Pi computer running the Rasbian OS</p>
-        <p>These builds are designed to be installed side-by-side to enable multiple versions of R to co-exist on the same system. They install to '/opt/R' and use the 'update-alternatives' facility to enable choosing a default from the installed versions.</p>
-        <p>Install using 'gdebi' (from gdebi-core) or 'dpkg -i' if you prefer to handle dependencies yourself.</p>
-      </div>
+    <!-- rasbian block -->
+    <div id="rasbian">
+        <div class="row">
+         <div class="twelve columns" id="list"><h5>R for the Raspberry Pi - Experimental</h5></div>
+        </div>
+        <div class="row">
+         <div class="twelve columns">
+           <p>Builds of R for the Raspberry Pi computer running the Rasbian OS</p>
+          <p>These builds are designed to be installed side-by-side to enable multiple versions of R to co-exist on the same system. They install to '/opt/R' and use the 'update-alternatives' facility to enable choosing a default from the installed versions.</p>
+          <p>Install using 'gdebi' (from gdebi-core) or 'dpkg -i' if you prefer to handle dependencies yourself.</p>
+         </div>
+        </div>
+
+        <div class="row">
+            <table id='rasbian-table' class="u-full-width"></table>
+            <script>
+              buildTable("rasbian");
+            </script>
+        </div>
     </div>
 
-    <div class="row">
-      <table id='builds-table' class="u-full-width"></table>
-      <script>
-        buildTable();
-      </script>
-    </div>
+    <!-- amz-el-arm block -->
+    <div id="amzn2-aarch64">
+        <div class="row">
+         <div class="twelve columns" id="list"><h5>R for Amazon Linux on Arm - Experimental</h5></div>
+        </div>
+        <div class="row">
+         <div class="twelve columns">
+           <p>Builds of R for Amazon Linux 2 running on AWS's ARM based servers</p>
+          <p>These builds are designed to be installed side-by-side to enable multiple versions of R to co-exist on the same system. They install to '/opt/R' and use the 'update-alternatives' facility to enable choosing a default from the installed versions.</p>
+          <p>Install using 'yum install -y &lt;RPM&gt;'</p>
+         </div>
+        </div>
 
+        <div class="row">
+            <table id='amzn2-aarch64-table' class="u-full-width"></table>
+            <script>
+              buildTable("amzn2-aarch64");
+            </script>
+        </div>
+    </div>
 </div>
 
 <!-- End Document
