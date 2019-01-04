@@ -39,12 +39,13 @@
 
     $.getJSON('builds.json', function(builds) {
 
-      var html = "<thead><tr><td>Download</td><td>Description</td></tr></thead><tbody>";
+      var html = "<thead><tr><td>Download</td><td>Description</td><td>Date</td></tr></thead><tbody>";
       for (var i = 0; i < builds[project].length; i += 1) {
         // sites Div
         html += "<tr><td><a href=\"" + builds[project][i].url + "\">";
         html += builds[project][i].name + "</a></td><td>";
-        html += builds[project][i].desc + "</td></tr>";
+        html += builds[project][i].desc + "</td><td>";
+        html += builds[project][i].date + "</td></tr>";
       }
       html += "</tbody>";
       var tableId = project + "-table"
