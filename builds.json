@@ -4,6 +4,6 @@
         {"url": "http://dl.sellorm.com/rpi/R-3.4.4_7_armhf.deb", "name": "R-3.4.4", "desc": "R 3.4.4 \"Someone to Lean On\"", "date": "2018-12-30"}
     ],
     "amzn2-aarch64": [
-        {"url": "http://dl.sellorm.com/amzn2-aarch64/R-3.5.2-1-9.amzn2.aarch64.rpm", "name": "R-3.5.2", "desc": "R 3.5.2 \"Eggshell Igloo\"", "date": "2018-01-03"}
+        {"url": "http://dl.sellorm.com/amzn2-aarch64/R-3.5.2-1-9.amzn2.aarch64.rpm", "name": "R-3.5.2", "desc": "R 3.5.2 \"Eggshell Igloo\"", "date": "2019-01-03"}
     ]
 }
