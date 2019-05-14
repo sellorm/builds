@@ -5,5 +5,6 @@
     ],
     "amzn2-aarch64": [
         {"url": "http://dl.sellorm.com/amzn2-aarch64/R-3.5.2-1-9.amzn2.aarch64.rpm", "name": "R-3.5.2", "desc": "R 3.5.2 \"Eggshell Igloo\"", "date": "2019-01-03"}
+        {"url": "http://dl.sellorm.com/amzn2-aarch64/R-3.6.0-1-9.amzn2.aarch64.rpm", "name": "R-3.6.0", "desc": "R 3.6.0 \"Planting of a Tree\"", "date": "2019-05-14"}
     ]
 }
