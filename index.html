@@ -72,22 +72,23 @@
     <hr>
 
     <!-- rasbian block -->
-    <div id="rasbian">
+    <div id="py-pkg">
         <div class="row">
-         <div class="twelve columns" id="list"><h5>R for the Raspberry Pi - Experimental</h5></div>
+         <div class="twelve columns" id="list"><h5>Standalone builds of Python - Experimental</h5></div>
         </div>
         <div class="row">
          <div class="twelve columns">
-           <p>Builds of R for the Raspberry Pi computer running the Rasbian OS</p>
-          <p>These builds are designed to be installed side-by-side to enable multiple versions of R to co-exist on the same system. They install to '/opt/R' and use the 'update-alternatives' facility to enable choosing a default from the installed versions.</p>
-          <p>Install using 'gdebi' (from gdebi-core) or 'dpkg -i' if you prefer to handle dependencies yourself.</p>
+           <p>Builds of Python for the various operating systems</p>
+          <p>These builds are designed to be installed side-by-side to enable multiple versions of Python to co-exist on the same system. They install to '/opt/python' and use the 'update-alternatives' facility to enable choosing a default from the installed versions.</p>
+          <p>Install using 'gdebi' (from gdebi-core) or 'dpkg -i' if you prefer to handle dependencies yourself, or using yum on CentOS systems.</p>
+          <p>For more information on how these packages were built or to raise an issue, visit the <a href="https://github.com/sellorm/py-pkg">py-pkg project on GitHub</a>.</p>
          </div>
         </div>
 
         <div class="row">
-            <table id='rasbian-table' class="u-full-width"></table>
+            <table id='py-pkg-table' class="u-full-width"></table>
             <script>
-              buildTable("rasbian");
+              buildTable("py-pkg");
             </script>
         </div>
     </div>
